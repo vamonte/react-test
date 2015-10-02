@@ -16,7 +16,7 @@ var getMockDatas = function(query=''){
         setTimeout(function(){
             var resp = dbMock;
             if(query.length > 0)
-                resp = _.filter(resp, function(city){ return city.name.indexOf(query) > -1; })
+                resp = _.filter(resp, function(city){ return city.name.toLowerCase().indexOf(query.toLowerCase()) > -1; })
             if(resp.length === 0)
                 resp = undefined;
             resolve(resp);
